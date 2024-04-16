@@ -2,35 +2,30 @@
     "animales": [
       {
         "nombre": "Leon",
-        "ejemplos": ["amigo", "auto", "avión", "agua", "árbol"],
         "rango": 5,
         "img":"Leon.png",
         "sonido":"Rugido.mp3"
       },
       {
         "nombre": "Lobo",
-        "ejemplos": ["elefante", "escuela", "estrella", "enfermedad", "escalera"],
         "rango": 4,
         "img":"Lobo.jpg",
         "sonido":"Aullido.mp3"
       },
       {
         "nombre": "Oso",
-        "ejemplos": ["iglesia", "isla", "invierno", "imán", "ilusión"],
-        "rango": 3,
+                "rango": 3,
         "img":"Oso.jpg",
         "sonido":"Gruñido.mp3"
       },
       {
         "nombre": "Serpiente",
-        "ejemplos": ["oso", "orilla", "oro", "ojo", "oveja"],
         "rango": 2,
         "img":"Serpiente.jpg",
         "sonido":"Siseo.mp3"
       },
       {
         "nombre": "Aguila",
-        "ejemplos": ["uva", "universo", "unicornio", "uniforme", "último"],
         "rango": 1,
         "img":"Aguila.png",
         "sonido":"Chillido.mp3"

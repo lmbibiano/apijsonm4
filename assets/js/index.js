@@ -1,4 +1,4 @@
-import Tipos from "./clases/Tipos.js";
+import {Aguila, Lobo, Leon, Oso, Serpiente} from "./clases/Tipos.js";
 import data from "./data.js";
 
 let animales = [];
@@ -33,10 +33,22 @@ const cardCreate = () => {
     }
 }
 
+
 window.playSound = (sonido) => {
+    
     try {
-        let musica = new Audio(`./assets/sounds/${sonido}`);
-        musica.play();
+        const animal = animales.find((item)=>{
+            return item.sonido === sonido;
+        })
+        sonido == 'Aullido.mp3' ? animal.cantoLobo()
+        : sonido == 'Chillido.mp3' ? animal.cantoAguila()
+        : sonido == 'Grunido.mp3' ? animal.cantoOso()
+        : sonido == 'Rugido.mp3' ? animal.cantoLeon()
+        : sonido == 'Siseo.mp3' ? animal.cantoSiseo()
+        : undefined;
+
+        /* let musica = new Audio(`./assets/sounds/${sonido}`);
+        musica.play(); */
     } catch (error) {
         console.log(error);
     }
@@ -93,7 +105,13 @@ document.getElementById('btnRegistrar').addEventListener('click', () =>{
         const rango = document.getElementById('rango').value;
         const comentario = document.getElementById('comentarios').value;
         if(nombre && rango && comentario){
-            let animal = new Tipos(nombre, rango, comentario, imagenSrc, sonidoOrg);
+            //let animal = new Tipos(nombre, rango, comentario, imagenSrc, sonidoOrg);
+            let animal = nombre == 'Leon' ? new Leon(nombre, rango, comentario, imagenSrc, sonidoOrg)
+            : nombre == 'Lobo' ? new Lobo(nombre, rango, comentario, imagenSrc, sonidoOrg)
+            : nombre == 'Oso' ? new Oso(nombre, rango, comentario, imagenSrc, sonidoOrg)
+            : nombre == 'Serpiente' ? new Serpiente(nombre, rango, comentario, imagenSrc, sonidoOrg)
+            : nombre == 'Aguila' ? new Aguila(nombre, rango, comentario, imagenSrc, sonidoOrg)
+            :undefined;
             animales.push(animal);
             cardCreate();
         } else{
